@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "LayoutPg";
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Index</title>
+    <script src="~/Scrips/jqueryfile.js"></script>
+
+    <link href="~/Contents/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scrips/bootstrap.js"></script>
+
+</head>
+<script>
+    function goToStudentHome11() {
+
+        var x = document.forms["myForm"]["fname"].value;
+        if (x == null || x == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+    }
+
+</script>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Student<span> book</span></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/Home/Index">Home <span class="sr-only">(current)</span></a></li>
+
+                    <li><a href="/course/course">Course</a></li>
+                    <li><a href="/scholarship/scholarship">Scholarship</a></li>
+                    <li><a href="/news/show_news">Events</a></li>
+                    <li><a href="/news/show_news">News</a></li>
+
+                    <li><a href="\contectUs.html">Contact Us</a></li>
+                    <li><a href="/Home/gellery">Gellery</a></li>
+
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Accounts <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#" data-toggle="modal" data-target="#logInModal">login</a></li>
+
+                            <li class="divider"></li>
+                            <li><a href="upload/signUp">Sign Up</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left  pull-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search" />
+                    </div>
+                    <button type="submit" class="btn btn-warning">go</button>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+
+        <!-- Modal -->
+        <div class="modal fade" id="logInModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Log In</h4>
+                    </div>
+                    <form action="/Home/checklogin" method="post">
+
+                        <div class="modal-body">
+
+                            <!--Here is body of Model-->
+                            <strong>UserName: </strong>
+                            <input id="t1" required="required" type="text" name="t1" />
+                            <br />
+                            <br />
+                            <strong>Password:</strong>
+                            <input id="t2"required="required" type="text" name="t2" />
+                            <br />
+                            <a href="/Home/post_news">Gooo</a>
+
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-default"  value="LogIn" />
+                        </div>
+                                </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+
+
+    @RenderBody()
+    <!-- end of the nav bar-->
+    <!-- start of the slider-->
+
+
+
+
+    <!--about us area-->
+
+
+
+
+    <!-- Tab panes -->
+
+</body>
+</html>

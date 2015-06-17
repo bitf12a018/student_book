@@ -1,0 +1,53 @@
+﻿@model List<project_ead.Models.scholarship>
+
+@{
+    Layout = "~/Views/Shared/LayoutPg1.cshtml";
+    }
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="~/img/banner.jpg" alt="img" width="1500">
+      <div class="carousel-caption">
+          <h2>show news </h2>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+
+          <!-- End course content -->
+
+
+
+<br/><br/><br/>
+
+
+
+  @foreach(var s in Model)
+    {
+     
+<div class="row" style="background-color:lavender;">
+    <div class="col-xs-12 col-sm-6 col-lg-8"><h3>marks : @s.marks</h3></div>
+    <div class="col-xs-6 col-lg-4"><h3>fees : @s.fees</h3> </div>
+  </div>
+  <div class="row" style="background-color:lavenderblush;">
+    <div class="col-xs-12 col-sm-6 col-lg-8"><h3>Details of ScholarShip :  @s.scholerShip</h3></div>
+    
+  </div> 
+      
+      <br/>
+                    if(Session["login"]!=null||Session["login_admin"]!=null)
+                    {
+     
+      <div>
+              <a href="/scholarship/delete_scholarship/@s.Id">Delete</a>
+
+   <a href="/scholarship/update_scholarship/@s.Id">Update</a>
+    </div>
+                    }
+      <br/><br/><br/>
+}

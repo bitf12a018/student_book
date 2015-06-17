@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Views/Shared/LayoutPg1.cshtml";
+    }
+@model List<project_ead.Models.ImageGallery>
+
+
+<!-- end of the nav bar-->
+    <!-- start of the banner-->
+
+   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="~/img/banner.jpg" alt="img"/ width="1500"/>
+      <div class="carousel-caption">
+          <h1>gellery</h1>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+
+    <br/><br/><br/>
+
+ @foreach(var s in Model)
+                                    {
+     <div class="col-xs-3">
+     <a href="@s.Image" title="This is Title">
+                  <img class="img-thumbnail" width="300" src="@s.Image" alt="img" />
+                </a>
+     </div>
+     
+     
+     
+     
+ }
+                        
+          <!-- End course content -->
+
+
+<!--about us area-->
+
+
+
+
+    <!--=========== END ABOUT US SECTION ================--> 
+
+

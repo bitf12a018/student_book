@@ -1,0 +1,53 @@
+﻿@model project_ead.Models.course
+
+@{
+    Layout = "~/Views/Shared/LayoutPg1.cshtml";
+    }
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="~/img/banner.jpg" alt="img" width="1500">
+      <div class="carousel-caption">
+          <h2>update course</h2>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+          <!-- End course content -->
+
+
+
+<br/><br/><br/>
+
+  <!-- End course content -->
+<div>
+                        <form class="form col-md-12 center-block" action="/course/conf_update_course" >
+                           <div class="form-group" hidden>
+                                
+                               @Html.TextBoxFor(m=>m.Id,new { @class="form-control input-lg" ,value=@Model.Id})
+                            </div>
+                             <div class="form-group">
+                                
+                               @Html.TextBoxFor(m=>m.name,new { @class="form-control input-lg" ,value=@Model.name})
+                            </div>
+                            <div class="form-group">
+                               @Html.TextBoxFor(m=>m.eligibility_,new { @class="form-control input-lg" ,value= @Model.eligibility_})
+
+                            </div>
+                            <div class="form-group">
+                               @Html.TextBoxFor(m=>m.duration,new { @class="form-control input-lg"   ,value=@Model.duration })
+
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="submit" value="comfirm update"  class="btn btn-primary btn-lg btn-block" />
+ 
+                            </div>
+                        </form>
+
+                    </div>

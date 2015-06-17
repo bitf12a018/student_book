@@ -1,0 +1,53 @@
+﻿@model project_ead.Models.scholarship
+
+@{
+    Layout = "~/Views/Shared/LayoutPg1.cshtml";
+    }
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="~/img/banner.jpg" alt="img" width="1500">
+      <div class="carousel-caption">
+          <h2>update ScholarShip</h2>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+          <!-- End course content -->
+
+
+
+<br/><br/><br/>
+
+  <!-- End course content -->
+<div>
+                        <form class="form col-md-12 center-block" action="/scholarship/conf_update_scholarship" >
+                           <div class="form-group" hidden>
+                                
+                               @Html.TextBoxFor(m=>m.Id,new { @class="form-control input-lg" ,value=@Model.Id})
+                            </div>
+                             <div class="form-group">
+                                
+                               @Html.TextBoxFor(m=>m.marks,new { @class="form-control input-lg" ,value=@Model.marks})
+                            </div>
+                            <div class="form-group">
+                               @Html.TextBoxFor(m=>m.scholerShip,new { @class="form-control input-lg" ,value= @Model.scholerShip})
+
+                            </div>
+                            <div class="form-group">
+                               @Html.TextBoxFor(m=>m.fees,new { @class="form-control input-lg"   ,value=@Model.fees })
+
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="submit" value="comfirm update"  class="btn btn-primary btn-lg btn-block" />
+ 
+                            </div>
+                        </form>
+
+                    </div>

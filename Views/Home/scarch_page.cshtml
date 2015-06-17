@@ -1,0 +1,103 @@
+﻿@model List<project_ead.Models.course>
+
+@{
+    Layout = "~/Views/Shared/LayoutPg1.cshtml";
+    }
+
+<script>
+
+    $("document").ready(f1);
+
+    function f1() {
+
+        $("#scarch_button").on("click", function () {
+
+
+            var cs = $("#cs").val();
+            var st = $("#st").val();
+
+            $.getJSON("/Home/search_json?cat=" + cs+"&txt="+st, function (d) {
+
+               
+                $("#div1").removeAttr("div");
+
+                if(cs == "News")
+                {
+                   
+                for (var i = 0; i < d.length ; i++) {
+
+                   $("#div1").append("<h3>"+d[i].detail+"</h3>")
+                }
+                }
+                else if (cs=="Course") {
+                   // $("#div1 div").remove();
+                    for (var i = 0; i < d.length ; i++) {
+
+                        $("#div1").append("<h3>" + d[i].name + "</h3>")
+                    }
+                }
+                else {
+                    //$("#div1 div").remove();
+                    for (var i = 0; i < d.length ; i++) {
+
+                        $("#div1").append("<h3>" + d[i].scholerShip + "</h3>")
+                        
+                    }
+
+                }
+
+
+
+            });
+
+        });
+    }
+
+</script>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="~/img/banner.jpg" alt="img" width="1500">
+      <div class="carousel-caption">
+          <h2>scarch page </h2>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+
+          <!-- End course content -->
+
+
+
+<br/><br/><br/>
+
+
+
+  <input type="text" class="form-control input-lg" placeholder="search" id="st"/>
+ @Html.DropDownList("abc", new List<SelectListItem>
+                                    {
+                                         new SelectListItem{ Text=" News", Value = "News" }, 
+                                             new SelectListItem{ Text="Scholarship", Value = "Scholarship" },
+                                            new SelectListItem{ Text="Course", Value = "Course" }
+                                     } ,new {@class="form-control input-lg",id="cs"}) 
+    
+
+<input type="button" id ="scarch_button" class="form-control input-lg" value="scarch mar" />
+
+
+
+<br/><br/>
+              <div class="container">
+           <div class="row" style="background-color:burlywood;">
+    <div class="col-xs-3 col-lg-4" id="div1"> </div>
+  </div>
+  <div class="row" style="background-color:bisque;">
+    <div class="col-xs-12 col-sm-6 col-lg-8"></div>
+    </div>
+                  </div>
+                                 

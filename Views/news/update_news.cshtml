@@ -1,0 +1,59 @@
+﻿@model project_ead.Models.news
+
+@{
+    Layout = "~/Views/Shared/LayoutPg1.cshtml";
+    }
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="~/img/banner.jpg" alt="img" width="1500">
+      <div class="carousel-caption">
+          <h2>upload news </h2>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+          <!-- End course content -->
+
+
+
+<br/><br/><br/>
+
+  <!-- End course content -->
+<div>
+                        <form class="form col-md-12 center-block" action="/news/conf_update_news" >
+                           <div class="form-group" hidden>
+                                
+                               @Html.TextBoxFor(m=>m.Id,new { @class="form-control input-lg" ,value=@Model.Id})
+                            </div>
+                             <div class="form-group">
+                                
+                                    @Html.DropDownListFor(m=>m.type, new List<SelectListItem>
+                                    {
+                                         new SelectListItem{ Text=" News", Value = "News" }, 
+                                             new SelectListItem{ Text="Events", Value = "Events" },
+                                            new SelectListItem{ Text="Notices", Value = "Notices" }
+                                     } ,new {@class="form-control input-lg",value=@Model.type})                          
+
+                             </div>
+                            <div class="form-group">
+                               @Html.TextBoxFor(m=>m.detail,new { @class="form-control input-lg" ,value= @Model.detail})
+
+                            </div>
+                            <div class="form-group">
+                               @Html.TextBoxFor(m=>m.date,new { @class="form-control input-lg"  ,type="date" ,value=@Model.date })
+
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="submit" value="comfirm update"  class="btn btn-primary btn-lg btn-block" />
+ 
+                            </div>
+                        </form>
+
+                    </div>

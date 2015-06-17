@@ -1,0 +1,48 @@
+﻿@*@model project_ead.Models.notice
+
+@{
+    Layout = "~/Views/Shared/LayoutPg1.cshtml";
+    }
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="~/img/banner.jpg" alt="img" width="1500">
+      <div class="carousel-caption">
+          <h2>upload notices </h2>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+          <!-- End course content -->
+
+
+
+<br/><br/><br/>
+
+  <!-- End course content -->
+<div>
+                        <form class="form col-md-12 center-block" action="/upload/save_notice">
+                            <div class="form-group">
+                               @Html.TextBoxFor(m=>m.type,new { @class="form-control input-lg" ,placeholder="type" })
+                            </div>
+                            <div class="form-group">
+                               @Html.TextBoxFor(m=>m.detail,new { @class="form-control input-lg" ,placeholder="detail" })
+
+                            </div>
+                            <div class="form-group">
+                               @Html.TextBoxFor(m=>m.date,new { @class="form-control input-lg" ,placeholder="date" ,type="date" })
+
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="submit" value="upload"  class="btn btn-primary btn-lg btn-block" />
+ 
+                            </div>
+                        </form>
+
+                    </div>*@

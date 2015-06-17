@@ -1,0 +1,52 @@
+﻿@model List<project_ead.Models.course>
+
+@{
+    Layout = "~/Views/Shared/LayoutPg1.cshtml";
+    }
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  
+ 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="~/img/banner.jpg" alt="img" width="1500">
+      <div class="carousel-caption">
+          <h2>show news </h2>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+
+          <!-- End course content -->
+
+
+
+<br/><br/><br/>
+
+
+
+  @foreach(var s in Model)
+    {
+     
+<div class="row" style="background-color:lavender;">
+    <div class="col-xs-12 col-sm-6 col-lg-8"><h3>name : @s.name</h3></div>
+    <div class="col-xs-6 col-lg-4"><h3>duration : @s.duration</h3> </div>
+  </div>
+  <div class="row" style="background-color:lavenderblush;">
+    <div class="col-xs-12 col-sm-6 col-lg-8"><h3>Eligibility :  @s.eligibility_</h3></div>
+    
+  </div> 
+      
+      <br/>
+                    if(Session["login"]!=null||Session["login_admin"]!=null)
+                    {
+      
+      <div>
+   <a href="/course/update_course/@s.Id">Update</a>
+    <a href="/course/delete_course/@s.Id">Delete</a>
+    </div>
+  }
+      <br/><br/><br/>
+}
